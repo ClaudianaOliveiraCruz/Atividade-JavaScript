@@ -1,0 +1,37 @@
+<html>
+
+<!-- 
+     Um carro faz 
+     20km - 1L
+     1L - 5.00
+
+     perguntar ao usuario quanto de dinheiro ele tem;
+     informar quantos litros de combustivel ele pode comprar;
+     informar quantos km o carro consegue andar;
+
+-->
+
+<body>
+
+    <script>
+
+        var dinheiro;
+        var litro;
+        var km;
+
+        var dinheiro = prompt('Informe o valor desejado: ');
+        document.write(parseFloat(dinheiro));
+
+        litro = dinheiro/5 ;
+        km = litro * 20;
+
+        alert(`Com ${dinheiro} R$ é possivel comprar ${litro} litros`);
+        alert(`Com ${litro} litros é possivel pecorrer ${km} Kilometros`);
+
+
+
+    </script>
+
+</body>
+
+</html>
