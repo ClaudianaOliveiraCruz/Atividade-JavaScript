@@ -1,0 +1,30 @@
+<html>
+
+<!-- 
+    Pograma que pede o raio, e em seguida exibe o perimetro e área do circulo.
+                        Area do circulo = (A = r²* π );
+                        Perimetro = (C = 2 * π * r); 
+-->
+
+    <body>
+   
+    <script>
+
+     var area;
+     var perimetro;
+
+     var raio = prompt('Digite o raio do circulo: ');
+     document.write(parseFloat(raio));
+     
+     area =  ((raio*raio) * Math.PI);
+     perimetro = (2 * Math.PI * raio);
+     
+     alert(`O VALOR DA ÁREA DO CIRCULO É  = ${area}` );
+     alert(`O PERIMETRO É IGUAL A = ${perimetro}` );
+
+
+    </script>
+
+
+    </body>
+</html>
