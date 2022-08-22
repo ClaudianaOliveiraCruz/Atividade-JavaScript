@@ -1,16 +1,270 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Formulario</title>
+<title>Formulario Estilizado</title>
 
 </head>
 
 <body>
+  <div class="container">
+    <div class="title">Registrar-se</div>
+    <form action="#">
+      <div class="user_details">
+        <div class="input_box">
+          <span class="details">Nome Completo</span>
+          <input type="text" placeholder="Ex: Dylan Little" required>
+        </div>
+        <div class="input_box">
+          <span class="details">Nome de Usuário</span>
+          <input type="text" placeholder="Ex: DylanLittle01" required>
+        </div>
+        <div class="input_box">
+          <span class="details">Email</span>
+          <input type="email" placeholder="Ex: dylanlittle@gmail.com" required>
+        </div>
+        <div class="input_box">
+          <span class="details">Número de Telefone</span>
+          <input type="tel" id="telefone" placeholder="(99)99999-9999" maxlength="15" required>
+        </div>
+        <div class="input_box">
+          <span class="details">Senha</span>
+          <input type="password" placeholder="********" required>
+        </div>
+        <div class="input_box">
+          <span class="details">Confirmar Senha</span>
+          <input type="password" placeholder="********" required>
+        </div>
+  
+      </div>
+      <div class="gender_details">
+        <input type="radio" name="gender" id="dot-1">
+        <input type="radio" name="gender" id="dot-2">
+        <input type="radio" name="gender" id="dot-3">
+        <span class="gender_title">Gênero</span>
+        <div class="category">
+          <label for="dot-1">
+            <span class="dot one"></span>
+            <span>Masculino</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span>Feminino</span>
+          </label>
+          <label for="dot-3">
+            <span class="dot three"></span>
+            <span>Prefiro não dizer</span>
+          </label>
+        </div>
+      </div>
+      <div class="button">
+        <input type="submit" value="Registrar-se">
+      </div>
+    </form>
+  </div>
+
+<style>
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --main-blue: #75b4de;
+  --main-darkblue: #312e79;
+  --main-grey: rgb(177, 176, 176);
+  --sub-grey: #bfbfbf;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center; /*centralizar verticalmente */
+  align-items: center; /* centralizar horizontalmente */
+  background: linear-gradient(135deg, var(--main-blue), var(--main-darkblue));
+  padding: 10px;
+}
+/* container e form */
+.container {
+  max-width: 700px;
+  width: 100%;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+}
+.container .title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+.container .title::before {
+  content: "";
+  position: absolute;
+  height: 3.5px;
+  width: 30px;
+  background: linear-gradient(135deg, var(--main-blue), var(--main-darkblue));
+  left: 0;
+  bottom: 0;
+}
+
+.container form .user_details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+/* dentro dos detalhes do usuário do formulário */
+form .user_details .input_box {
+  width: calc(100% / 2 - 20px);
+  margin-bottom: 15px;
+}
+
+.user_details .input_box .details {
+  font-weight: 500;
+  margin-bottom: 5px;
+  display: block;
+}
+.user_details .input_box input {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid var(--main-grey);
+  padding-left: 15px;
+  font-size: 16px;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.user_details .input_box input:focus,
+.user_details .input_box input:valid {
+  border-color: var(--main-darkblue);
+}
+
+/* dentro dos detalhes de gênero do formulário */
+
+form .gender_details .gender_title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+form .gender_details .category {
+  display: flex;
+  width: 80%;
+  margin: 15px 0;
+  justify-content: space-between;
+}
+
+.gender_details .category label {
+  display: flex;
+  align-items: center;
+}
+
+.gender_details .category .dot {
+  height: 18px;
+  width: 18px;
+  background: var(--sub-grey);
+  border-radius: 50%;
+  margin: 10px;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+
+#dot-1:checked ~ .category .one,
+#dot-2:checked ~ .category .two,
+#dot-3:checked ~ .category .three {
+  border-color: var(--sub-grey);
+  background: var(--main-darkblue);
+}
+
+form input[type="radio"] {
+  display: none;
+}
+
+/* botão de envio */
+form .button {
+  height: 40px;
+  margin: 40px 0;
+}
+
+form .button input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  background: linear-gradient(135deg, var(--main-blue), var(--main-darkblue));
+  transition: all 0.3s ease;
+}
+
+form .button input:hover {
+  background: linear-gradient(-135deg, var(--main-blue), var(--main-darkblue));
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 584px) {
+  .container {
+    max-width: 100%;
+  }
+
+  form .user_details .input_box {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  form .gender_details .category {
+    width: 100%;
+  }
+
+  .container form .user_details {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+
+  .user_details::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+</style>
+
+<script>
+  /* Máscaras do Telefone */
+function mascara(o,f){
+    v_obj=o
+    v_fun=f
+    setTimeout("execmascara()",1)
+}
+function execmascara(){
+    v_obj.value=v_fun(v_obj.value)
+}
+function mtel(v){
+    v=v.replace(/\D/g,""); //Remove tudo o que não é dígito
+    v=v.replace(/^(\d{2})(\d)/g,"($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
+    v=v.replace(/(\d)(\d{4})$/,"$1-$2"); //Coloca hífen entre o quarto e o quinto dígitos
+    return v;
+}
+function id( el ){
+	return document.getElementById( el );
+}
+window.onload = function(){
+	id('telefone').onkeyup = function(){
+		mascara( this, mtel );
+	}
+}
+</script>
 
 </body>
 
